@@ -1,23 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import NavBar from './components/NavBar';
 
-
-
-class Home extends React.Component {
-    render(){
-        return(
-        <div>
-            <ul>
-                <li><Link to="/admin">Home</Link></li>
-                <li><Link to="/admin/products">Products</Link></li>
-            </ul>
-        </div>
-        );
-    }
-}
 
 function all(){
     alert(2+2);
@@ -45,7 +32,7 @@ render(
     <Router>
         <div>
             <Header/>
-            <Home/>
+            <NavBar/>
             <Route exact path="/admin" component={IndexPage} />
             <Route path="/admin/products" component={Products} />
             <Footer/>
