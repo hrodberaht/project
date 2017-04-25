@@ -1,31 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import NavBar from './components/NavBar';
-
-
-function all(){
-    alert(2+2);
-}
-
-class IndexPage extends React.Component {
-    render(){
-        return(
-            <div>
-                <button onClick={ ()=>all()}>Hej</button>
-                <h1>React</h1>
-            </div>
-        );
-    }
-}
-
-class Products extends React.Component {
-    render(){
-        return(<h1>Products</h1>);
-    }
-}
+import Header from './components/header';
+import Footer from './components/footer';
+import NavBar from './components/navBar';
+import IndexPage from './components/indexPage';
+import Products from './components/products';
 
 
 render(
