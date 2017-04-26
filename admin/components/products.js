@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Products extends React.Component {
     
@@ -32,12 +33,11 @@ class Products extends React.Component {
         // Map through cars and return linked cars
         const toysNode = this.state.toys.map((toy) => {
             return (
-               <p key={toy.id}><a
-                    href="#"
-                    className="list-group-item"
-                    >
-                    {toy.name}
-                </a></p>
+               <p key={toy.id}>
+                    <Link to={"products/"+ toy.id}>
+                        {toy.name}
+                    </Link>
+                </p>
             );
         });
         return (
