@@ -5,30 +5,49 @@ class Products extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            product: []
+            toys: []
         };
         
     }
     
     componentDidMount(){
+        
         const data = [
         {
             id: 1,
-            name: "Toy",
-            price: 2
+            name: "Car",
+            price: "2"
         },
         {
             id: 2,
             name: "Doll",
-            price: 5
+            price: "5"
         }
         ];
-        this.setState({product: data});
+        
+        this.setState({toys: data});
     }
     
     render(){
-        const product = this.state.product;
-        return(<h1>{product}</h1>);
+        // Map through cars and return linked cars
+        const toysNode = this.state.toys.map((toy) => {
+            return (
+               <p key={toy.id}><a
+                    href="#"
+                    className="list-group-item"
+                    >
+                    {toy.name}
+                </a></p>
+            );
+        });
+        return (
+            <div>
+                <h1>Products</h1>
+                <div className="list-group">
+                    {toysNode}
+                </div>
+            </div>
+        );
     }
 }
 
