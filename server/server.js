@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const api = require("../api/controllers/api");
 
 const app = express();
 
@@ -20,6 +21,9 @@ app.get("/admin/*", (req, res) =>
 {
     res.redirect("/admin");
 });
+
+app.use("/api", api);
+
 
 
 app.listen(process.env.PORT, () => 
