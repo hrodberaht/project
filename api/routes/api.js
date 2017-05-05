@@ -8,6 +8,12 @@ router.get("/", (req, res) =>
 }).post("/", (req, res) => 
 {
     res.send({"status": "post"});
+}).put("/", (req, res) => 
+{
+    res.send({"status": "put"});
+}).delete("/", (req, res) => 
+{
+    res.send({"status": "delete"});
 });
 
 
