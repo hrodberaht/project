@@ -3,39 +3,13 @@ import { Link } from 'react-router-dom';
 
 class Products extends React.Component {
     
-    constructor(props){
-        super(props);
-        this.state = {
-            toys: []
-        };
-        
-    }
-    
-    componentDidMount(){
-        
-        const data = [
-        {
-            id: 1,
-            name: "Car",
-            price: "2"
-        },
-        {
-            id: 2,
-            name: "Doll",
-            price: "5"
-        }
-        ];
-        
-        this.setState({toys: data});
-    }
-    
     render(){
         // Map through cars and return linked cars
-        const toysNode = this.state.toys.map((toy) => {
+        const toysNode = this.props.data.map((data) => {
             return (
-               <p key={toy.id}>
-                    <Link to={"products/"+ toy.id}>
-                        {toy.name}
+               <p key={data.id}>
+                    <Link to={"products/"+ data.id}>
+                        {data.name}
                     </Link>
                 </p>
             );
@@ -43,6 +17,7 @@ class Products extends React.Component {
         return (
             <div>
                 <h1>Products</h1>
+                <p>{this.props.title}</p>
                 <div className="list-group">
                     {toysNode}
                 </div>

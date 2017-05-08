@@ -9,13 +9,28 @@ import Products from './components/products';
 import ProductsDetail from './components/products-detail';
 
 
+const data = [
+        {
+            id: 1,
+            name: "Car",
+            price: "2"
+        },
+        {
+            id: 2,
+            name: "Doll",
+            price: "5"
+        }
+    ];
+    
+const title = "title";
+
 render(
     <Router>
         <div>
             <Header/>
             <NavBar/>
             <Route exact path="/admin" component={IndexPage} />
-            <Route exact path="/admin/products" component={Products} />
+            <Route exact path="/admin/products" render={() => <Products data={data} title={title} />} />
             <Route path="/admin/products/:id" component={ProductsDetail} />
             <Footer/>
         </div>
